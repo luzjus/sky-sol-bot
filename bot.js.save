@@ -1,0 +1,42 @@
+const { Client, GatewayIntentBits } = require('discord.js');
+
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMembers  // Required to detect new members
+  ]
+});
+
+client.once('ready', () => {
+  console.log(`✅ Bot is online as ${client.user.tag}`);
+});
+
+client.on('guildMemberAdd', async (member) => {
+  try {
+    await member.send(
+      `Hi, nice to meet you! 🌟 Solient, GatewayIntentBits } = require('discord.js');
+
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMembers  // Required to detect new members
+  ]
+});
+
+client.once('ready', () => {
+  console.log(`✅ Bot is online as ${client.user.tag}`);
+});
+
+client.on('guildMemberAdd', async (member) => {
+  try {
+    await member.send(
+      `Hi, nice to meet you! 🌟 So excited for you to be part of the group!\n\n` +
+      `Have you already been able to request samples?\n\n` +
+      `This is also the important information to get you onboarded 👇\n` +
+      `[https://discord.com/channels/1373999680848924722/1417024981162000405/1455677799120507024]`
+    );
+    console.log(`✅ DM sent to ${member.user.tag}`);
+  } catch (err) {
+    console.error(`❌ Could not DM ${member.user.tag}:`, err.message);
+  }
+});
